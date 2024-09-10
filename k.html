@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Timetable</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+.timetable {
+    width: 100%;
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+}
+
+td {
+    background-color: #ecf0f1;
+}
+
+tbody tr:nth-child(even) td {
+    background-color: #bdc3c7;
+}
+
+td[colspan="7"] {
+    background-color: #95a5a6;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My 60-Hour Weekly Study Timetable</h1>
+    </header>
+
+    <section class="timetable">
+        <table>
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                    <th>Sunday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>8:00 AM - 10:00 AM</td>
+                    <td>Calculus</td>
+                    <td>Discrete Mathematics</td>
+                    <td>Theory of Computation</td>
+                    <td>Computer Systems</td>
+                    <td>Numerical Methods</td>
+                    <td>Independent Projects</td>
+                    <td>Light Revision</td>
+                </tr>
+                <tr>
+                    <td>10:30 AM - 12:30 PM</td>
+                    <td>Programming</td>
+                    <td>Object-Oriented Programming</td>
+                    <td>Functional Programming</td>
+                    <td>Data Structures</td>
+                    <td>Databases</td>
+                    <td>Mathematics Revision</td>
+                    <td>Catch-up</td>
+                </tr>
+                <tr>
+                    <td>12:30 PM - 1:30 PM</td>
+                    <td colspan="7">Lunch Break</td>
+                </tr>
+                <tr>
+                    <td>1:30 PM - 3:30 PM</td>
+                    <td>Linear Algebra</td>
+                    <td>Probability and Statistics</td>
+                    <td>Cybersecurity</td>
+                    <td>Software Engineering</td>
+                    <td>Advanced Algorithms</td>
+                    <td>Coding Practice</td>
+                    <td>Personal Projects</td>
+                </tr>
+                <tr>
+                    <td>4:00 PM - 6:00 PM</td>
+                    <td>Algorithms</td>
+                    <td>Algorithms</td>
+                    <td>Problem Solving</td>
+                    <td>Algorithms Practice</td>
+                    <td>Numerical Methods</td>
+                    <td>Cybersecurity</td>
+                    <td>Preparation for Next Week</td>
+                </tr>
+                <tr>
+                    <td>6:00 PM - 7:00 PM</td>
+                    <td colspan="7">Dinner Break</td>
+                </tr>
+                <tr>
+                    <td>7:00 PM - 9:00 PM</td>
+                    <td>Programming Projects</td>
+                    <td>LeetCode Practice</td>
+                    <td>Math Revision</td>
+                    <td>Project Work</td>
+                    <td>General Revision</td>
+                    <td>Revision</td>
+                    <td>Review for the Week</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <script>
+        // You can add more advanced functionality here
+window.onload = function() {
+    alert("Welcome to your study timetable!");
+};
+
+    </script>
+</body>
+</html>
