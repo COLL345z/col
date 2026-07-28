@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>Happy Girlfriend's Day, My Love</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,6 +43,7 @@
             position: relative;
             min-height: 100vh;
             background: var(--red-light);
+            -webkit-tap-highlight-color: transparent;
         }
 
         h1,
@@ -189,57 +190,6 @@
             }
             50% {
                 opacity: 1;
-            }
-        }
-
-        /* ==============================================
-           SECTION 2: TRANSITION BUTTON (appears after first click)
-           ============================================== */
-        #transition-btn {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 70;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.6s ease, transform 0.4s ease;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1.5px solid rgba(255, 255, 255, 0.6);
-            color: #fff8f2;
-            font-family: 'Quicksand', sans-serif;
-            font-weight: 600;
-            font-size: 1.1rem;
-            padding: 16px 38px;
-            border-radius: 40px;
-            cursor: pointer;
-            letter-spacing: 0.5px;
-            text-shadow: 0 0 20px rgba(212, 165, 116, 0.5);
-            box-shadow: 0 0 40px rgba(212, 165, 116, 0.2);
-            animation: transitionGlow 2.4s ease-in-out infinite;
-        }
-        #transition-btn.visible {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        #transition-btn:hover {
-            transform: translate(-50%, -50%) scale(1.05);
-            background: rgba(255, 255, 255, 0.18);
-            box-shadow: 0 0 60px rgba(212, 165, 116, 0.4);
-            border-color: rgba(255, 255, 255, 0.85);
-        }
-        #transition-btn:focus-visible {
-            outline: 2px solid #fff;
-            outline-offset: 6px;
-        }
-        @keyframes transitionGlow {
-            0%,
-            100% {
-                box-shadow: 0 0 30px rgba(212, 165, 116, 0.2);
-            }
-            50% {
-                box-shadow: 0 0 55px rgba(230, 200, 120, 0.45);
             }
         }
 
@@ -1712,13 +1662,39 @@
             min-height: 88vh;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 50px 20px;
+            justify-content: flex-start;
+            padding: 50px 20px 30px;
             position: relative;
             z-index: 1;
         }
         .tab-panel.active {
             display: flex;
+        }
+
+        /* Continue button style */
+        .continue-section-btn {
+            margin-top: 30px;
+            background: linear-gradient(135deg, var(--red-dark), var(--red-deep));
+            color: #fff;
+            border: none;
+            padding: 14px 40px;
+            border-radius: 40px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: transform .2s ease, background .2s ease;
+            width: auto;
+            min-width: 200px;
+            touch-action: manipulation;
+        }
+        .continue-section-btn:hover {
+            transform: translateY(-2px);
+            filter: brightness(0.95);
+        }
+        .continue-section-btn:active {
+            transform: scale(0.97);
         }
 
         /* ==============================================
@@ -1737,7 +1713,7 @@
             gap: 16px;
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
-            padding: 40px 50px;
+            padding: 40px 20px;
             border-radius: 24px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.8);
@@ -1890,7 +1866,7 @@
             max-height: 88vh;
             overflow-y: auto;
             border-radius: 4px;
-            padding: 40px 38px 32px;
+            padding: 40px 30px 32px;
             box-shadow: 0 24px 70px rgba(45, 27, 27, 0.2);
             position: relative;
             animation: paperSway 0.6s ease;
@@ -2055,7 +2031,9 @@
             text-align: center;
             transition: transform .3s ease;
         }
-        .why-card:hover { transform: translateY(-6px); }
+        .why-card:hover {
+            transform: translateY(-6px);
+        }
         .why-card .img-frame {
             width: 100%;
             aspect-ratio: 1/1;
@@ -2063,7 +2041,7 @@
             overflow: hidden;
             margin-bottom: 16px;
             background: linear-gradient(135deg, var(--red-light), var(--red-mid));
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -2076,7 +2054,7 @@
         }
         .why-card .img-frame .fallback {
             font-size: 3rem;
-            color: rgba(176,90,90,0.2);
+            color: rgba(176, 90, 90, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -2417,7 +2395,7 @@
         }
 
         /* ==============================================
-           RESPONSIVE
+           RESPONSIVE — optimized for Samsung A16 & similar
            ============================================== */
         @media (max-width: 640px) {
             #photo-bg {
@@ -2439,7 +2417,7 @@
                 grid-column: span 1;
             }
             .envelope-wrapper {
-                padding: 30px 20px;
+                padding: 30px 16px;
             }
             .envelope {
                 height: 190px;
@@ -2451,36 +2429,76 @@
             }
             .why-grid {
                 grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+            .why-card {
+                padding: 14px 14px 20px;
+            }
+            .why-card .reason {
+                font-size: 1.2rem;
+            }
+            .why-card .reason-desc {
+                font-size: 0.85rem;
             }
             #music-controller {
                 width: 190px;
                 padding: 10px 12px;
+                bottom: 12px;
+                right: 12px;
             }
             .letter-paper {
-                padding: 30px 20px 24px;
+                padding: 30px 18px 24px;
             }
             .letter-photos .mini-frame {
                 width: 60px;
                 height: 60px;
             }
             #tabs-nav {
-                gap: 8px;
-                padding: 12px 8px;
+                gap: 6px;
+                padding: 10px 6px;
             }
             .tab-btn {
-                padding: 8px 16px;
-                font-size: 0.82rem;
+                padding: 8px 14px;
+                font-size: 0.78rem;
             }
-            #transition-btn {
-                padding: 14px 28px;
-                font-size: 0.95rem;
+            .tab-panel {
+                padding: 30px 12px 20px;
+                min-height: 70vh;
+            }
+            .continue-section-btn {
+                padding: 12px 28px;
+                font-size: 0.9rem;
+                min-width: 160px;
+            }
+            .hero-message h1 {
+                font-size: clamp(2rem, 8vw, 2.8rem);
+            }
+            .hero-enter {
+                padding: 10px 24px;
+                font-size: 0.9rem;
+                bottom: 4%;
             }
         }
+
         @media (max-width: 420px) {
             .why-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .why-card {
+                padding: 12px 10px 16px;
+            }
+            .why-card .img-frame {
+                border-radius: 12px;
+            }
+            .why-card .reason {
+                font-size: 1rem;
+            }
+            .why-card .reason-desc {
+                font-size: 0.8rem;
             }
         }
+
         @media (prefers-reduced-motion: reduce) {
             * {
                 animation-duration: 0.01ms !important;
@@ -2507,12 +2525,7 @@
             <span>↓</span>
         </button>
 
-        <!-- ==============================================
-        SECTION 2: TRANSITION BUTTON (hidden until first click)
-        ============================================== -->
-        <button id="transition-btn" aria-label="Open the sections">reveal your surprise 💝</button>
-
-        <!-- Flower garden -->
+        <!-- Flower garden (fully restored) -->
         <div class="flowers">
             <div class="flower flower--1">
                 <div class="flower__leafs flower__leafs--1">
@@ -2760,6 +2773,7 @@
                 </div>
                 <div class="envelope-hint">click the seal to open it</div>
             </div>
+            <button class="continue-section-btn" id="letterContinue">Continue →</button>
         </section>
 
         <!-- Why I Love You Tab -->
@@ -2769,6 +2783,7 @@
             <div class="why-grid" id="whyGrid">
                 <!-- Cards injected by JS -->
             </div>
+            <button class="continue-section-btn" id="whyContinue">Continue →</button>
         </section>
 
         <!-- Voice Note Tab -->
@@ -2790,6 +2805,7 @@
                     <div class="voice-time" id="voiceTime">0:00 / 0:00</div>
                 </div>
             </div>
+            <button class="continue-section-btn" id="voiceContinue">Continue →</button>
         </section>
 
         <!-- Forever Tab -->
@@ -2880,35 +2896,28 @@
         })();
 
         /* ==============================================
-           SECTION 2: TRANSITION FLOW (3-step)
+           SECTION 2: TRANSITION — removed "reveal your surprise"
            ============================================== */
         const hero = document.getElementById('hero');
         const heroMessage = document.getElementById('heroMessage');
         const heroEnter = document.getElementById('heroEnter');
-        const transitionBtn = document.getElementById('transition-btn');
         const mainContent = document.getElementById('main-content');
         const photoBg = document.getElementById('photo-bg');
         const musicController = document.getElementById('music-controller');
 
-        // Step 1: Click "step inside" → show transition button
+        // Click "step inside" → directly reveal content
         heroEnter.addEventListener('click', () => {
             heroMessage.classList.add('faded');
             heroEnter.classList.add('faded');
             setTimeout(() => {
-                transitionBtn.classList.add('visible');
+                hero.classList.add('slide-up');
+                photoBg.classList.add('visible');
+                mainContent.classList.add('revealed');
+                musicController.classList.add('visible');
+                setTimeout(() => {
+                    document.getElementById('main-content').scrollIntoView({ behavior: 'smooth' });
+                }, 500);
             }, 400);
-        });
-
-        // Step 2: Click transition button → reveal main content
-        transitionBtn.addEventListener('click', () => {
-            hero.classList.add('slide-up');
-            photoBg.classList.add('visible');
-            mainContent.classList.add('revealed');
-            musicController.classList.add('visible');
-            // Scroll to main content after transition
-            setTimeout(() => {
-                document.getElementById('main-content').scrollIntoView({ behavior: 'smooth' });
-            }, 500);
         });
 
         /* ==============================================
@@ -3027,10 +3036,10 @@
         const whyData = [
             { img: 'us10.jpeg', reason: 'Your smile', desc: 'It lights up every room and my heart.' },
             { img: 'usf1.jpeg', reason: 'Your kindness', desc: 'You care so deeply about everyone around you.' },
-            { img: 'us8.jpeg', reason: 'Your laugh', desc: 'It’s the most beautiful sound I know.' },
+            { img: 'us8.jpeg', reason: 'Your laugh', desc: 'It\'s the most beautiful sound I know.' },
             { img: 'us5.jpeg', reason: 'Your strength', desc: 'You face everything with such grace.' },
             { img: 'usf7.jpeg', reason: 'Your eyes', desc: 'They hold the whole universe.' },
-            { img: 'us12.jpeg', reason: 'Your soul', desc: 'It’s pure, gentle, and endlessly lovely.' },
+            { img: 'us12.jpeg', reason: 'Your soul', desc: 'It\'s pure, gentle, and endlessly lovely.' },
             { img: 'us6.jpeg', reason: 'Your voice', desc: 'It calms me, even on my hardest days.' },
             { img: 'us4.jpeg', reason: 'Your spirit', desc: 'You are my favorite person, always.' }
         ];
@@ -3137,12 +3146,31 @@
         musicBubble.addEventListener('click', () => { musicController.classList.remove('hidden');
             musicBubble.classList.remove('show'); });
 
-        // Start music on first user interaction
         document.addEventListener('click', function firstClickMusic() { startMusic();
             document.removeEventListener('click', firstClickMusic); }, { once: true });
 
         /* ==============================================
-           SECTION 9: FOREVER / BACK TO BEGINNING
+           SECTION 9: CONTINUE BUTTONS (navigate tabs)
+           ============================================== */
+        const tabOrder = ['letter', 'why', 'voice', 'forever'];
+
+        document.getElementById('letterContinue').addEventListener('click', () => {
+            activateTab('why');
+            document.getElementById('main-content').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('whyContinue').addEventListener('click', () => {
+            activateTab('voice');
+            document.getElementById('main-content').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('voiceContinue').addEventListener('click', () => {
+            activateTab('forever');
+            document.getElementById('main-content').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        /* ==============================================
+           SECTION 10: FOREVER / BACK TO BEGINNING
            ============================================== */
         document.getElementById('backBtn').addEventListener('click', () => {
             // Reset everything
@@ -3152,12 +3180,9 @@
             hero.classList.remove('slide-up');
             heroMessage.classList.remove('faded');
             heroEnter.classList.remove('faded');
-            transitionBtn.classList.remove('visible');
             mainContent.classList.remove('revealed');
             photoBg.classList.remove('visible');
-            // Scroll to hero
             hero.scrollIntoView({ behavior: 'smooth' });
-            // Hide music controller
             musicController.classList.remove('visible');
             musicController.classList.remove('hidden');
             musicBubble.classList.remove('show');
