@@ -1578,7 +1578,7 @@
         }
 
         /* ==============================================
-           SECTION 4: PHOTO BACKGROUND
+           SECTION 4: PHOTO BACKGROUND - FIXED
            ============================================== */
         #photo-bg {
             position: fixed;
@@ -1591,17 +1591,17 @@
             grid-auto-rows: 180px;
             gap: 0;
             opacity: 0;
-            transition: opacity 1.2s ease;
+            transition: opacity 1.5s ease;
         }
         #photo-bg.visible {
-            opacity: 0.15;
+            opacity: 0.35;
         }
         #photo-bg .bg-photo {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
-            filter: grayscale(60%) contrast(1.2) brightness(0.7);
+            filter: grayscale(40%) contrast(1.1) brightness(0.5);
         }
         #photo-bg .bg-photo:nth-child(3n+1) {
             grid-row: span 2;
@@ -1619,23 +1619,24 @@
         }
 
         /* ==============================================
-           SECTION 5: MAIN CONTENT & TAB NAVIGATION
+           SECTION 5: MAIN CONTENT - FIXED LAYOUT
            ============================================== */
         #main-content {
             position: relative;
             z-index: 1;
             display: none;
-            background: var(--bg-secondary);
+            background: transparent;
             padding-top: 1px;
+            min-height: 100vh;
         }
         #main-content.revealed {
             display: block;
-            animation: contentFadeIn 0.6s ease forwards;
+            animation: contentFadeIn 0.8s ease forwards;
         }
         @keyframes contentFadeIn {
             0% {
                 opacity: 0;
-                transform: translateY(15px);
+                transform: translateY(20px);
             }
             100% {
                 opacity: 1;
@@ -1652,8 +1653,8 @@
             flex-wrap: wrap;
             gap: 8px;
             padding: 12px 10px;
-            background: rgba(10, 10, 18, 0.92);
-            backdrop-filter: blur(12px);
+            background: rgba(10, 10, 18, 0.85);
+            backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-glass);
             box-shadow: var(--shadow-dark);
         }
@@ -1689,20 +1690,21 @@
 
         .tab-panel {
             display: none;
-            min-height: 85vh;
+            min-height: 100vh;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-            padding: 40px 15px 25px;
+            justify-content: center;
+            padding: 80px 15px 60px;
             position: relative;
             z-index: 1;
+            overflow: visible;
         }
         .tab-panel.active {
             display: flex;
         }
 
         .continue-section-btn {
-            margin-top: 25px;
+            margin-top: 30px;
             background: linear-gradient(135deg, var(--accent-crimson), var(--accent-wine));
             color: #fff;
             border: none;
@@ -1733,7 +1735,9 @@
            ============================================== */
         #panel-letter {
             flex-direction: column;
-            gap: 20px;
+            gap: 30px;
+            justify-content: center;
+            min-height: 100vh;
         }
         .envelope-wrapper {
             position: relative;
@@ -1742,8 +1746,8 @@
             flex-direction: column;
             align-items: center;
             gap: 14px;
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
+            background: rgba(18, 18, 30, 0.75);
+            backdrop-filter: blur(15px);
             padding: 30px 18px;
             border-radius: 24px;
             box-shadow: var(--shadow-dark), var(--shadow-glow);
@@ -1880,12 +1884,12 @@
             font-family: var(--font-serif);
         }
 
-        /* Letter modal — UPDATED with y.pdf content */
+        /* Letter modal */
         #letter-modal {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(12px);
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(15px);
             z-index: 300;
             display: none;
             align-items: center;
@@ -1893,7 +1897,7 @@
             padding: 20px;
         }
         .letter-paper {
-            background: linear-gradient(180deg, #1a1a2e, #12121e);
+            background: rgba(26, 26, 46, 0.95);
             max-width: 600px;
             width: 100%;
             max-height: 88vh;
@@ -2075,13 +2079,14 @@
         }
 
         /* ==============================================
-           SECTION 7: WHY I LOVE YOU — UPDATED with let.pdf content
+           SECTION 7: WHY I LOVE YOU
            ============================================== */
         #panel-why {
             flex-direction: column;
-            padding-top: 30px;
-            padding-bottom: 50px;
+            padding: 80px 15px 60px;
             gap: 25px;
+            justify-content: center;
+            min-height: 100vh;
         }
         #panel-why h2 {
             text-align: center;
@@ -2104,8 +2109,8 @@
             max-width: 960px;
         }
         .why-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(8px);
+            background: rgba(18, 18, 30, 0.75);
+            backdrop-filter: blur(15px);
             border-radius: 18px;
             padding: 18px 18px 25px;
             box-shadow: var(--shadow-dark);
@@ -2163,7 +2168,10 @@
            ============================================== */
         #panel-voice {
             flex-direction: column;
-            gap: 22px;
+            gap: 30px;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 80px 15px 60px;
         }
         #panel-voice h2 {
             color: var(--accent-gold);
@@ -2172,8 +2180,8 @@
         }
         .recorder {
             width: min(300px, 82vw);
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
+            background: rgba(18, 18, 30, 0.75);
+            backdrop-filter: blur(15px);
             border-radius: 16px;
             padding: 22px 18px;
             box-shadow: var(--shadow-dark);
@@ -2277,14 +2285,14 @@
         }
 
         /* ==============================================
-           SECTION 9: FOREVER — PURE HEART ANIMATION (ONLY HERE)
+           SECTION 9: FOREVER — PURE HEART ANIMATION
            ============================================== */
         #panel-forever {
             position: relative;
             overflow: hidden;
-            min-height: 85vh;
-            padding: 40px 15px 25px !important;
-            background: #0a0000;
+            min-height: 100vh;
+            padding: 0 !important;
+            background: transparent;
             display: flex !important;
             align-items: center;
             justify-content: center;
@@ -2302,126 +2310,8 @@
         }
 
         /* ==============================================
-           SECTION 10: MUSIC PLAYER
+           SECTION 10: MUSIC PLAYER - MINIMAL
            ============================================== */
-        #music-controller {
-            position: fixed;
-            bottom: 18px;
-            right: 18px;
-            z-index: 200;
-            background: rgba(10, 10, 18, 0.92);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--border-glass);
-            border-radius: 18px;
-            box-shadow: var(--shadow-dark);
-            padding: 12px 14px;
-            width: 210px;
-            transition: transform .3s ease, opacity .3s ease;
-            display: none;
-        }
-        #music-controller.visible {
-            display: block;
-        }
-        #music-controller.hidden {
-            transform: translateY(120%);
-            opacity: 0;
-            pointer-events: none;
-        }
-        .mc-top {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 6px;
-        }
-        .mc-disc {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: radial-gradient(circle at 50% 50%, var(--accent-gold) 0 5px, #fff 5px 7px, var(--accent-crimson) 7px 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.6rem;
-            color: #0a0a12;
-            animation: spin 3s linear infinite;
-            animation-play-state: paused;
-            flex-shrink: 0;
-        }
-        .mc-disc.playing {
-            animation-play-state: running;
-        }
-        @keyframes spin {
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-        .mc-title {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            line-height: 1.2;
-        }
-        .mc-sub {
-            font-size: 0.6rem;
-            color: var(--text-secondary);
-        }
-        .mc-hide {
-            margin-left: auto;
-            background: none;
-            border: none;
-            color: var(--text-secondary);
-            cursor: pointer;
-            font-size: 0.85rem;
-        }
-        .mc-progress {
-            width: 100%;
-            height: 3px;
-            border-radius: 2px;
-            background: var(--bg-primary);
-            cursor: pointer;
-            position: relative;
-            margin-bottom: 6px;
-        }
-        .mc-progress-fill {
-            height: 100%;
-            border-radius: 2px;
-            background: var(--accent-gold);
-            width: 0%;
-        }
-        .mc-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 6px;
-        }
-        .mc-times {
-            font-size: 0.6rem;
-            color: var(--text-secondary);
-            font-variant-numeric: tabular-nums;
-        }
-        #musicPlayPause {
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            border: 1px solid var(--accent-gold);
-            background: transparent;
-            color: var(--accent-gold);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            transition: transform .2s;
-        }
-        #musicPlayPause:hover {
-            transform: scale(1.06);
-            background: var(--accent-gold);
-            color: #0a0a12;
-        }
-        .mc-volume {
-            width: 50px;
-            accent-color: var(--accent-gold);
-        }
         #music-bubble {
             position: fixed;
             bottom: 18px;
@@ -2443,6 +2333,55 @@
         }
         #music-bubble.show {
             display: flex;
+        }
+        
+        #music-controller {
+            position: fixed;
+            bottom: 18px;
+            right: 18px;
+            z-index: 200;
+            background: rgba(10, 10, 18, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--accent-gold);
+            border-radius: 30px;
+            box-shadow: var(--shadow-dark);
+            padding: 8px 12px;
+            display: none;
+            align-items: center;
+            gap: 10px;
+            transition: transform .3s ease, opacity .3s ease;
+        }
+        #music-controller.visible {
+            display: flex;
+        }
+        #music-controller.hidden {
+            transform: translateY(120%);
+            opacity: 0;
+            pointer-events: none;
+            display: none;
+        }
+        .mc-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid var(--accent-gold);
+            background: transparent;
+            color: var(--accent-gold);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            transition: all .2s ease;
+        }
+        .mc-btn:hover {
+            background: var(--accent-gold);
+            color: #0a0a12;
+        }
+        .mc-btn.play-btn {
+            width: 36px;
+            height: 36px;
+            font-size: 1rem;
         }
 
         /* ==============================================
@@ -2470,6 +2409,9 @@
                 grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
                 grid-auto-rows: 80px;
             }
+            #photo-bg.visible {
+                opacity: 0.3;
+            }
             #photo-bg .bg-photo:nth-child(3n+1) {
                 grid-row: span 1;
             }
@@ -2483,6 +2425,10 @@
             #photo-bg .bg-photo:nth-child(11n+6) {
                 grid-row: span 1;
                 grid-column: span 1;
+            }
+            .tab-panel {
+                padding: 60px 10px 40px;
+                min-height: 100vh;
             }
             .envelope-wrapper {
                 padding: 24px 14px;
@@ -2507,12 +2453,6 @@
             }
             .why-card .reason-desc {
                 font-size: 0.8rem;
-            }
-            #music-controller {
-                width: 175px;
-                padding: 8px 10px;
-                bottom: 10px;
-                right: 10px;
             }
             .letter-paper {
                 padding: 26px 16px 20px;
@@ -2557,7 +2497,21 @@
             .letter-paper .deco-side { display: none; }
             #panel-forever {
                 min-height: 70vh;
-                padding: 24px 10px 16px !important;
+                padding: 0 !important;
+            }
+            #music-controller {
+                padding: 6px 10px;
+                gap: 8px;
+            }
+            .mc-btn {
+                width: 28px;
+                height: 28px;
+                font-size: 0.8rem;
+            }
+            .mc-btn.play-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 0.9rem;
             }
         }
 
@@ -2587,7 +2541,7 @@
                 height: 155px;
             }
             #panel-forever {
-                padding: 20px 8px 12px !important;
+                padding: 0 !important;
             }
         }
 
@@ -2617,7 +2571,7 @@
             <span>↓</span>
         </button>
 
-        <!-- Flower bouquet (simplified for performance) -->
+        <!-- Flower bouquet -->
         <div class="flowers">
             <div class="flower flower--1" style="left: 50%; transform: rotate(0deg);">
                 <div class="flower__leafs flower__leafs--1">
@@ -2784,7 +2738,7 @@
                     <div class="flower__line__leaf flower__line__leaf--5"></div>
                     <div class="flower__line__leaf flower__line__leaf--6"></div>
                 </div>
-            </div>
+                       </div>
             <div class="flower flower--7" style="left: 73%; transform: rotate(-12deg);">
                 <div class="flower__leafs flower__leafs--2">
                     <div class="flower__leaf flower__leaf--1"></div>
@@ -3060,7 +3014,7 @@
     </div>
 
     <!-- ==============================================
-    SECTION 5: LETTER MODAL — UPDATED with y.pdf content
+    SECTION 5: LETTER MODAL
     ============================================== -->
     <div id="letter-modal">
         <div class="letter-paper" id="letterPaper">
@@ -3072,56 +3026,30 @@
             <span class="deco-side left">🌸 ❤️ 🌹 ❤️ 🌸</span>
             <span class="deco-side right">🌹 ❤️ 🌸 ❤️ 🌹</span>
 
-            <h3>My dearest Rehema,</h3>
-            <div class="letter-date">— Happy Girlfriend's Day, my loveee —</div>
-            
-            <div class="letter-body" id="letterBody">
-                <p>Honestly... I don't even know where to begin. There are so many things I want to tell you and I don't think one letter could ever be enough... but I'll try.</p>
-                
-                <p>For most of my life I've always felt alone... I've never really had close friends and the few friendships I had slowly faded once school was over... I never really had someone I could share life with... someone I could tell everything... someone I felt completely safe around.</p>
-                
-                <p>Then wewe came into my life... For the first time I found someone I could truly be myself around... someone I could laugh with... cry with... be weird around... and never feel judged. You became the one person I could always run to... and trust me... hiyo ni kitu I will never take for granted.</p>
-                
-                <p>If I'm being honest... I never really cared much about relationships... I had tried before but nothing ever felt right... then we started talking... and sijui why... but something about you just felt right... like part of me already knew this was where I belonged.</p>
-                
-                <p>Taking a chance on us turned out to be one of the best decisions I've ever made. You give me peace... unaweza usijue but you really do. You feel like home.</p>
-                
-                <p>I'll never forget our first night together. I remember how nervous I was... but the moment you laid in my arms... everything changed. Feeling you slowly relax... feeling your little twitches as you drifted off to sleep... while I just held you... I've never felt so calm... so comfortable... so at peace. That moment is forever engraved in my heart... from that day... you've been my person.</p>
-                
-                <p>Since loving you... I don't feel alone anymore. Since loving you... I found home. Home isn't a place anymore... Home is wherever I'm with you.</p>
-                
-                <p>There's something you once told me that I'll never forget: <em>"You are my peace... my safe space... my therapist... my advisor... my loveeeeeeeeeeeeeee... you are a very big and important part of my lifeee love youuuu."</em></p>
-                
-                <p>Every single time I read those words... they make me smile. Because everything you said about me... is exactly how I feel about you too. You're my peace... My safe place... My best friend... My home... My favorite person.</p>
-                
-                <p>Thank you for loving me... thank you for accepting every part of me... thank you for making life brighter... warmer... and happier than I ever thought it could be.</p>
-                
-                <p>Our love feels like the one right thing in a million wrongs. Nakupenda sana Rehema... more than words could ever explain.</p>
+            <h3>My Dearest,</h3>
+            <div class="letter-date">— Girlfriends Day, 2025 —</div>
+            <div class="letter-photos">
+                <div class="mini-frame"><img src="rehema1.jpeg" alt="Memory 1" onerror="this.parentElement.innerHTML='<div class=fallback>📸</div>'"></div>
+                <div class="mini-frame"><img src="rehema2.jpeg" alt="Memory 2" onerror="this.parentElement.innerHTML='<div class=fallback>📸</div>'"></div>
+                <div class="mini-frame"><img src="rehema3.jpeg" alt="Memory 3" onerror="this.parentElement.innerHTML='<div class=fallback>📸</div>'"></div>
             </div>
-            
-            <p class="signoff">Happy Girlfriend's Day my beautiful girl.<br>Forever yours,<br>Collins ❤️</p>
+            <div class="letter-body" id="letterBody">
+                <p>I wanted today to start with a smile on your face, so here it is — happy Girlfriend's Day to the person who makes even the most ordinary days feel soft and golden.</p>
+                <p>Thank you for your patience, your laugh, the way you remember little things I forget about myself, and the way you make me feel like home. I don't say it enough, so let this letter say it for me: I love you, I'm proud of you, and I'm endlessly lucky to be yours.</p>
+                <p>Whenever you're ready, close this and explore the tabs above — I left a little of us in each one.</p>
+            </div>
+            <p class="signoff">Forever yours,<br>Collins ❤️</p>
             <button class="continue-btn" id="continueBtn">Close ✕</button>
         </div>
     </div>
 
     <!-- ==============================================
-    SECTION 6: MUSIC PLAYER
+    SECTION 6: MUSIC PLAYER - MINIMAL
     ============================================== -->
     <div id="music-controller">
-        <div class="mc-top">
-            <div class="mc-disc" id="mcDisc">♫</div>
-            <div>
-                <div class="mc-title">Our Song</div>
-                <div class="mc-sub" id="mcSub">playing now</div>
-            </div>
-            <button class="mc-hide" id="mcHide" aria-label="Hide player">✕</button>
-        </div>
-        <div class="mc-progress" id="mcProgress"><div class="mc-progress-fill" id="mcProgressFill"></div></div>
-        <div class="mc-row">
-            <button id="musicPlayPause" aria-label="Play or pause">❚❚</button>
-            <div class="mc-times" id="mcTimes">0:00 / 0:00</div>
-            <input type="range" class="mc-volume" id="mcVolume" min="0" max="1" step="0.01" value="0.55">
-        </div>
+        <button class="mc-btn" id="prevSong" aria-label="Previous song">⏮</button>
+        <button class="mc-btn play-btn" id="musicPlayPause" aria-label="Play or pause">▶</button>
+        <button class="mc-btn" id="nextSong" aria-label="Next song">⏭</button>
     </div>
     <button id="music-bubble" aria-label="Show music player">♫</button>
 
@@ -3129,6 +3057,7 @@
     SECTION 7: AUDIO ELEMENTS
     ============================================== -->
     <audio id="bgMusic" src="our-song.mp3" loop preload="auto"></audio>
+    <audio id="bgMusic2" src="second-song.mp3" loop preload="auto"></audio>
     <audio id="voiceAudio" src="voice-note.mp3" preload="auto"></audio>
 
     <script>
@@ -3168,7 +3097,6 @@
         const heroEnter = document.getElementById('heroEnter');
         const mainContent = document.getElementById('main-content');
         const photoBg = document.getElementById('photo-bg');
-        const musicController = document.getElementById('music-controller');
 
         heroEnter.addEventListener('click', () => {
             heroMessage.classList.add('faded');
@@ -3177,7 +3105,6 @@
                 hero.classList.add('slide-up');
                 photoBg.classList.add('visible');
                 mainContent.classList.add('revealed');
-                musicController.classList.add('visible');
                 setTimeout(() => {
                     document.getElementById('main-content').scrollIntoView({ behavior: 'smooth' });
                 }, 400);
@@ -3296,54 +3223,17 @@
         document.getElementById('continueBtn').addEventListener('click', closeLetterModal);
 
         /* ==============================================
-           SECTION 6: WHY I LOVE YOU — UPDATED with let.pdf content
+           SECTION 6: WHY I LOVE YOU (cards)
            ============================================== */
         const whyData = [
-            { 
-                img: 'us10.jpeg', 
-                reason: 'Your Smile', 
-                desc: 'I don\'t think I\'ve ever seen someone smile the way you do... it\'s so genuine... so full of life. Every time you smile I can\'t help but smile too. Looking at that picture of us in the flower shop, I don\'t even know what was making you laugh that much... but seeing you that happy made me feel like the luckiest guy alive. I honestly hope I get to spend the rest of my life finding new reasons to make you smile like that... because your smile is home to me.' 
-            },
-            { 
-                img: 'usf1.jpeg', 
-                reason: 'Your Intelligence', 
-                desc: 'One thing I admire so much kuhusu wewe is how smart you are. You\'re not the type of person who just gets by... when you decide something matters... you lock in kabisa. Watching you take your studies seriously inspires me more than you probably realize. It reminds me that hard work really does pay off. I love that about you... and I\'m incredibly proud of the woman you\'re becoming.' 
-            },
-            { 
-                img: 'us8.jpeg', 
-                reason: 'Your Genuineness', 
-                desc: 'You\'re one of the most genuine people I\'ve ever met. You don\'t pretend to be someone you\'re not... what people see is exactly who you are... and that\'s so rare nowadays. I never have to wonder whether you\'re being real with me because you\'ve always shown me honesty, kindness and care. Thank you for always making me feel safe enough to be myself too.' 
-            },
-            { 
-                img: 'us5.jpeg', 
-                reason: 'Your Laugh', 
-                desc: 'Your laugh has healing powers... and yes, I\'m serious. Sometimes I catch myself saying something extra goofy just because I know it\'ll make you laugh. Hearing you laugh instantly makes my day better. It reminds me that life doesn\'t always have to be serious... and every time I hear it, I find myself thinking... "Yeah... that\'s my girl."' 
-            },
-            { 
-                img: 'usf7.jpeg', 
-                reason: 'Your Voice', 
-                desc: 'Your voice brings me so much peace. Sometimes I don\'t even care what we\'re talking about... I just love hearing you speak. After a long day... hearing your voice feels like finally taking a deep breath. It\'s comforting... it\'s familiar... and it\'s one of the places where my heart feels most at home.' 
-            },
-            { 
-                img: 'us12.jpeg', 
-                reason: 'Your Beauty', 
-                desc: 'Now... can we talk about how absolutely gorgeous you are? Seriously Rehema... every single time I look at you I\'m left wondering... "How is she real?"... Sometimes I stare at your pictures longer than I should because I still can\'t believe you\'re actually my girlfriend. You\'re genuinely the most beautiful girl I\'ve ever laid eyes on... ndani na nje.' 
-            },
-            { 
-                img: 'us6.jpeg', 
-                reason: 'Your Determination', 
-                desc: 'I love how determined you are. Once you\'ve decided you\'re going to do something... hakuna kitu inakusimamisha. Whether it\'s your studies or something important to you... you give it everything you\'ve got. That kind of discipline is something I deeply admire... It motivates me to become better too. You\'re honestly incredible.' 
-            },
-            { 
-                img: 'us4.jpeg', 
-                reason: 'Your Fashion', 
-                desc: 'Okay... this one shouldn\'t even surprise you because I\'ve told you a million times already. Your fashion sense is sooo good. Every single outfit somehow ends up looking amazing on you... I don\'t know how you do it. Every time you send me a picture I\'m already expecting to say... "Babe... umeiva tena."' 
-            },
-            { 
-                img: 'us2.jpeg', 
-                reason: 'You Chose Me', 
-                desc: 'The thing I love most... is that somehow... out of everyone in this world... you chose me. And for that... I will be forever grateful.' 
-            }
+            { img: 'us10.jpeg', reason: 'Your smile', desc: 'It lights up every room and my heart.' },
+            { img: 'usf1.jpeg', reason: 'Your kindness', desc: 'You care so deeply about everyone around you.' },
+            { img: 'us8.jpeg', reason: 'Your laugh', desc: 'It\'s the most beautiful sound I know.' },
+            { img: 'us5.jpeg', reason: 'Your strength', desc: 'You face everything with such grace.' },
+            { img: 'usf7.jpeg', reason: 'Your eyes', desc: 'They hold the whole universe.' },
+            { img: 'us12.jpeg', reason: 'Your soul', desc: 'It\'s pure, gentle, and endlessly lovely.' },
+            { img: 'us6.jpeg', reason: 'Your voice', desc: 'It calms me, even on my hardest days.' },
+            { img: 'us4.jpeg', reason: 'Your spirit', desc: 'You are my favorite person, always.' }
         ];
 
         const whyGrid = document.getElementById('whyGrid');
@@ -3403,65 +3293,127 @@
         });
 
         /* ==============================================
-           SECTION 8: MUSIC PLAYER — AUTOPLAY
+           SECTION 8: MUSIC PLAYER — MINIMAL WITH SONG SWITCHING
            ============================================== */
         const bgMusic = document.getElementById('bgMusic');
-        const mcDisc = document.getElementById('mcDisc');
+        const bgMusic2 = document.getElementById('bgMusic2');
         const musicPlayPause = document.getElementById('musicPlayPause');
-        const mcProgress = document.getElementById('mcProgress');
-        const mcProgressFill = document.getElementById('mcProgressFill');
-        const mcTimes = document.getElementById('mcTimes');
-        const mcVolume = document.getElementById('mcVolume');
-        const mcHide = document.getElementById('mcHide');
         const musicBubble = document.getElementById('music-bubble');
-        const mcSub = document.getElementById('mcSub');
+        const musicController = document.getElementById('music-controller');
+        const prevSong = document.getElementById('prevSong');
+        const nextSong = document.getElementById('nextSong');
 
-        function startMusic() {
-            bgMusic.volume = parseFloat(mcVolume.value);
-            bgMusic.play().then(() => {
-                mcDisc.classList.add('playing');
+        let currentSong = 1; // 1 = first song, 2 = second song
+        let musicStarted = false;
+
+        function getCurrentAudio() {
+            return currentSong === 1 ? bgMusic : bgMusic2;
+        }
+
+        function pauseOtherAudio() {
+            if (currentSong === 1) {
+                bgMusic2.pause();
+            } else {
+                bgMusic.pause();
+            }
+        }
+
+        function playCurrentSong() {
+            const audio = getCurrentAudio();
+            pauseOtherAudio();
+            audio.volume = 0.55;
+            audio.play().then(() => {
                 musicPlayPause.textContent = '❚❚';
-                mcSub.textContent = 'playing now';
+                musicStarted = true;
             }).catch(() => {
-                mcSub.textContent = 'tap play to begin';
                 musicPlayPause.textContent = '▶';
             });
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(startMusic, 500);
+        function switchSong(songNum) {
+            currentSong = songNum;
+            playCurrentSong();
+        }
+
+        // Start music on first click of the hero enter button
+        heroEnter.addEventListener('click', () => {
+            if (!musicStarted) {
+                setTimeout(() => {
+                    playCurrentSong();
+                }, 500);
+            }
         });
 
+        // Also start on any first click
         document.addEventListener('click', function firstClickMusic() {
-            if (bgMusic.paused) {
-                startMusic();
+            if (!musicStarted) {
+                setTimeout(() => {
+                    playCurrentSong();
+                }, 300);
             }
             document.removeEventListener('click', firstClickMusic);
         }, { once: true });
 
         musicPlayPause.addEventListener('click', () => {
-            if (bgMusic.paused) { startMusic(); } else {
-                bgMusic.pause();
-                mcDisc.classList.remove('playing');
+            const audio = getCurrentAudio();
+            if (audio.paused) {
+                playCurrentSong();
+            } else {
+                audio.pause();
                 musicPlayPause.textContent = '▶';
-                mcSub.textContent = 'paused';
             }
         });
-        bgMusic.addEventListener('timeupdate', () => {
-            const pct = bgMusic.duration ? (bgMusic.currentTime / bgMusic.duration * 100) : 0;
-            mcProgressFill.style.width = pct + '%';
-            mcTimes.textContent = fmtTime(bgMusic.currentTime) + ' / ' + fmtTime(bgMusic.duration || 0);
+
+        prevSong.addEventListener('click', () => {
+            switchSong(currentSong === 1 ? 2 : 1);
         });
-        mcProgress.addEventListener('click', (e) => {
-            const rect = mcProgress.getBoundingClientRect();
-            const ratio = (e.clientX - rect.left) / rect.width;
-            if (bgMusic.duration) bgMusic.currentTime = ratio * bgMusic.duration;
+
+        nextSong.addEventListener('click', () => {
+            switchSong(currentSong === 1 ? 2 : 1);
         });
-        mcVolume.addEventListener('input', () => { bgMusic.volume = parseFloat(mcVolume.value); });
-        mcHide.addEventListener('click', () => { musicController.classList.add('hidden');
-            musicBubble.classList.add('show'); });
-        musicBubble.addEventListener('click', () => { musicController.classList.remove('hidden');
-            musicBubble.classList.remove('show'); });
+
+        // Handle song endings - loop current song
+        bgMusic.addEventListener('ended', () => {
+            if (currentSong === 1) {
+                bgMusic.currentTime = 0;
+                bgMusic.play();
+            }
+        });
+        bgMusic2.addEventListener('ended', () => {
+            if (currentSong === 2) {
+                bgMusic2.currentTime = 0;
+                bgMusic2.play();
+            }
+        });
+
+        // Music controller visibility
+        musicBubble.addEventListener('click', () => {
+            musicController.classList.add('visible');
+            musicController.classList.remove('hidden');
+            musicBubble.classList.remove('show');
+        });
+
+        // Hide controller after 3 seconds of inactivity
+        let hideTimeout;
+        function resetHideTimer() {
+            clearTimeout(hideTimeout);
+            musicController.classList.add('visible');
+            musicController.classList.remove('hidden');
+            musicBubble.classList.remove('show');
+            hideTimeout = setTimeout(() => {
+                musicController.classList.add('hidden');
+                musicController.classList.remove('visible');
+                musicBubble.classList.add('show');
+            }, 3000);
+        }
+
+        musicController.addEventListener('mouseenter', resetHideTimer);
+        musicController.addEventListener('click', resetHideTimer);
+        
+        // Show music bubble after hero transition
+        setTimeout(() => {
+            musicBubble.classList.add('show');
+        }, 2000);
 
         /* ==============================================
            SECTION 9: CONTINUE BUTTONS
@@ -3489,10 +3441,8 @@
             const container = document.getElementById('panel-forever');
             if (!container) return;
 
-            // Ensure the container is completely empty
             container.innerHTML = '';
 
-            // Create canvas and append ONLY to this container
             const canvas = document.createElement('canvas');
             canvas.style.cssText =
                 'position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: block; pointer-events: none;';
@@ -3506,7 +3456,6 @@
             let startTime = performance.now();
             let animationId = null;
 
-            // ─── HEART MATH ──────────────────────────────
             function heartOutline(t) {
                 const x = 16 * Math.pow(Math.sin(t), 3);
                 const y = -(13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
@@ -3520,7 +3469,6 @@
                 return val <= 0;
             }
 
-            // ─── BUILD HEART FILL ─────────────────────────
             let heartPoints = [];
 
             function buildHeartPoints() {
@@ -3548,7 +3496,6 @@
                 }
             }
 
-            // ─── BUILD CHAINS ─────────────────────────────
             let chains = [];
 
             function buildChains() {
@@ -3574,7 +3521,6 @@
                 }
             }
 
-            // ─── RESIZE ────────────────────────────────────
             function resize() {
                 const rect = container.getBoundingClientRect();
                 W = rect.width;
@@ -3588,7 +3534,6 @@
 
             window.addEventListener('resize', resize);
 
-            // ─── DRAW ──────────────────────────────────────
             function draw(now) {
                 if (!container.classList.contains('active')) {
                     animationId = requestAnimationFrame(draw);
@@ -3605,7 +3550,6 @@
                 const cy = H / 2 + 6;
                 const s = scale;
 
-                // ── Red glow ──
                 const glowR = Math.min(W, H) * 0.45;
                 const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, glowR);
                 grad.addColorStop(0, 'rgba(255, 30, 30, 0.15)');
@@ -3616,7 +3560,6 @@
                 ctx.arc(cx, cy, glowR, 0, Math.PI * 2);
                 ctx.fill();
 
-                // ── Tiny stars ──
                 ctx.shadowBlur = 0;
                 for (let i = 0; i < 60; i++) {
                     const seed = i * 1.618 + 0.5;
@@ -3631,14 +3574,12 @@
                     ctx.fill();
                 }
 
-                // ── Heart pulse ──
                 const pulse = 1 + 0.01 * Math.sin(t * 0.55);
                 const sp = s * pulse;
 
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
 
-                // ── 1. FILL ──
                 for (const p of heartPoints) {
                     const flick = 0.5 + 0.5 * Math.sin(t * p.flickerSpeed + p.flickerPhase);
                     const px = cx + p.x * sp;
@@ -3661,7 +3602,6 @@
                     ctx.restore();
                 }
 
-                // ── 2. OUTLINE ──
                 ctx.shadowBlur = 0;
                 ctx.beginPath();
                 const steps = 100;
@@ -3681,7 +3621,6 @@
                 ctx.stroke();
                 ctx.shadowBlur = 0;
 
-                // ── 3. CHAINS ──
                 for (const chain of chains) {
                     for (const bead of chain.beads) {
                         const tt = chain.phaseOffset + chain.dir * (t * chain.speed) + bead.tOffset;
@@ -3697,7 +3636,6 @@
                         const g = Math.floor(30 + 40 * (1 - flick * 0.6));
                         const b = Math.floor(20 + 30 * (1 - flick * 0.5));
 
-                        // Trail
                         for (let trail = 0; trail < 4; trail++) {
                             const tf = trail / 4;
                             const ttTrail = chain.phaseOffset + chain.dir * (t * chain.speed - tf * 0.05) + bead
@@ -3717,7 +3655,6 @@
                             ctx.restore();
                         }
 
-                        // Main bead
                         ctx.save();
                         ctx.translate(px, py);
                         ctx.font = `${fontSize}px ${FONT_FAMILY}`;
@@ -3732,11 +3669,9 @@
                 animationId = requestAnimationFrame(draw);
             }
 
-            // ─── INIT ──────────────────────────────────────
             resize();
             startTime = performance.now();
 
-            // Use IntersectionObserver to pause when not visible
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -3755,7 +3690,6 @@
 
             observer.observe(container);
 
-            // Also listen to tab visibility changes
             document.addEventListener('visibilitychange', () => {
                 if (document.hidden) {
                     if (animationId) {
@@ -3770,10 +3704,8 @@
                 }
             });
 
-            // Start the animation
             animationId = requestAnimationFrame(draw);
 
-            // ─── CLEANUP ──────────────────────────────────
             window.addEventListener('beforeunload', () => {
                 if (animationId) cancelAnimationFrame(animationId);
             });
@@ -3781,7 +3713,6 @@
             const resizeObserver = new ResizeObserver(() => resize());
             resizeObserver.observe(container);
 
-            // Store cleanup reference
             container._cleanup = () => {
                 if (animationId) cancelAnimationFrame(animationId);
                 resizeObserver.disconnect();
@@ -3790,6 +3721,7 @@
         })();
 
         console.log('❤️ Forever section: "i love you" heart animation loaded exclusively in this tab.');
+        console.log('🎵 Music player ready with 2 songs - click ♫ to show controller');
     </script>
 </body>
 </html>
