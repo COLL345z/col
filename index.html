@@ -1880,7 +1880,7 @@
             font-family: var(--font-serif);
         }
 
-        /* Letter modal */
+        /* Letter modal — UPDATED with y.pdf content */
         #letter-modal {
             position: fixed;
             inset: 0;
@@ -2075,7 +2075,7 @@
         }
 
         /* ==============================================
-           SECTION 7: WHY I LOVE YOU
+           SECTION 7: WHY I LOVE YOU — UPDATED with let.pdf content
            ============================================== */
         #panel-why {
             flex-direction: column;
@@ -2278,13 +2278,12 @@
 
         /* ==============================================
            SECTION 9: FOREVER — PURE HEART ANIMATION (ONLY HERE)
-           ISOLATED AND PERFECTLY ALIGNED
            ============================================== */
         #panel-forever {
             position: relative;
             overflow: hidden;
             min-height: 85vh;
-            padding: 0 !important;
+            padding: 40px 15px 25px !important;
             background: #0a0000;
             display: flex !important;
             align-items: center;
@@ -2558,6 +2557,7 @@
             .letter-paper .deco-side { display: none; }
             #panel-forever {
                 min-height: 70vh;
+                padding: 24px 10px 16px !important;
             }
         }
 
@@ -2585,6 +2585,9 @@
             }
             .envelope {
                 height: 155px;
+            }
+            #panel-forever {
+                padding: 20px 8px 12px !important;
             }
         }
 
@@ -3057,7 +3060,7 @@
     </div>
 
     <!-- ==============================================
-    SECTION 5: LETTER MODAL
+    SECTION 5: LETTER MODAL — UPDATED with y.pdf content
     ============================================== -->
     <div id="letter-modal">
         <div class="letter-paper" id="letterPaper">
@@ -3069,19 +3072,34 @@
             <span class="deco-side left">🌸 ❤️ 🌹 ❤️ 🌸</span>
             <span class="deco-side right">🌹 ❤️ 🌸 ❤️ 🌹</span>
 
-            <h3>My Dearest,</h3>
-            <div class="letter-date">— Girlfriends Day, 2025 —</div>
-            <div class="letter-photos">
-                <div class="mini-frame"><img src="rehema1.jpeg" alt="Memory 1" onerror="this.parentElement.innerHTML='<div class=fallback>📸</div>'"></div>
-                <div class="mini-frame"><img src="rehema2.jpeg" alt="Memory 2" onerror="this.parentElement.innerHTML='<div class=fallback>📸</div>'"></div>
-                <div class="mini-frame"><img src="rehema3.jpeg" alt="Memory 3" onerror="this.parentElement.innerHTML='<div class=fallback>📸</div>'"></div>
-            </div>
+            <h3>My dearest Rehema,</h3>
+            <div class="letter-date">— Happy Girlfriend's Day, my loveee —</div>
+            
             <div class="letter-body" id="letterBody">
-                <p>I wanted today to start with a smile on your face, so here it is — happy Girlfriend's Day to the person who makes even the most ordinary days feel soft and golden.</p>
-                <p>Thank you for your patience, your laugh, the way you remember little things I forget about myself, and the way you make me feel like home. I don't say it enough, so let this letter say it for me: I love you, I'm proud of you, and I'm endlessly lucky to be yours.</p>
-                <p>Whenever you're ready, close this and explore the tabs above — I left a little of us in each one.</p>
+                <p>Honestly... I don't even know where to begin. There are so many things I want to tell you and I don't think one letter could ever be enough... but I'll try.</p>
+                
+                <p>For most of my life I've always felt alone... I've never really had close friends and the few friendships I had slowly faded once school was over... I never really had someone I could share life with... someone I could tell everything... someone I felt completely safe around.</p>
+                
+                <p>Then wewe came into my life... For the first time I found someone I could truly be myself around... someone I could laugh with... cry with... be weird around... and never feel judged. You became the one person I could always run to... and trust me... hiyo ni kitu I will never take for granted.</p>
+                
+                <p>If I'm being honest... I never really cared much about relationships... I had tried before but nothing ever felt right... then we started talking... and sijui why... but something about you just felt right... like part of me already knew this was where I belonged.</p>
+                
+                <p>Taking a chance on us turned out to be one of the best decisions I've ever made. You give me peace... unaweza usijue but you really do. You feel like home.</p>
+                
+                <p>I'll never forget our first night together. I remember how nervous I was... but the moment you laid in my arms... everything changed. Feeling you slowly relax... feeling your little twitches as you drifted off to sleep... while I just held you... I've never felt so calm... so comfortable... so at peace. That moment is forever engraved in my heart... from that day... you've been my person.</p>
+                
+                <p>Since loving you... I don't feel alone anymore. Since loving you... I found home. Home isn't a place anymore... Home is wherever I'm with you.</p>
+                
+                <p>There's something you once told me that I'll never forget: <em>"You are my peace... my safe space... my therapist... my advisor... my loveeeeeeeeeeeeeee... you are a very big and important part of my lifeee love youuuu."</em></p>
+                
+                <p>Every single time I read those words... they make me smile. Because everything you said about me... is exactly how I feel about you too. You're my peace... My safe place... My best friend... My home... My favorite person.</p>
+                
+                <p>Thank you for loving me... thank you for accepting every part of me... thank you for making life brighter... warmer... and happier than I ever thought it could be.</p>
+                
+                <p>Our love feels like the one right thing in a million wrongs. Nakupenda sana Rehema... more than words could ever explain.</p>
             </div>
-            <p class="signoff">Forever yours,<br>Collins ❤️</p>
+            
+            <p class="signoff">Happy Girlfriend's Day my beautiful girl.<br>Forever yours,<br>Collins ❤️</p>
             <button class="continue-btn" id="continueBtn">Close ✕</button>
         </div>
     </div>
@@ -3278,17 +3296,54 @@
         document.getElementById('continueBtn').addEventListener('click', closeLetterModal);
 
         /* ==============================================
-           SECTION 6: WHY I LOVE YOU (cards)
+           SECTION 6: WHY I LOVE YOU — UPDATED with let.pdf content
            ============================================== */
         const whyData = [
-            { img: 'us10.jpeg', reason: 'Your smile', desc: 'It lights up every room and my heart.' },
-            { img: 'usf1.jpeg', reason: 'Your kindness', desc: 'You care so deeply about everyone around you.' },
-            { img: 'us8.jpeg', reason: 'Your laugh', desc: 'It\'s the most beautiful sound I know.' },
-            { img: 'us5.jpeg', reason: 'Your strength', desc: 'You face everything with such grace.' },
-            { img: 'usf7.jpeg', reason: 'Your eyes', desc: 'They hold the whole universe.' },
-            { img: 'us12.jpeg', reason: 'Your soul', desc: 'It\'s pure, gentle, and endlessly lovely.' },
-            { img: 'us6.jpeg', reason: 'Your voice', desc: 'It calms me, even on my hardest days.' },
-            { img: 'us4.jpeg', reason: 'Your spirit', desc: 'You are my favorite person, always.' }
+            { 
+                img: 'us10.jpeg', 
+                reason: 'Your Smile', 
+                desc: 'I don\'t think I\'ve ever seen someone smile the way you do... it\'s so genuine... so full of life. Every time you smile I can\'t help but smile too. Looking at that picture of us in the flower shop, I don\'t even know what was making you laugh that much... but seeing you that happy made me feel like the luckiest guy alive. I honestly hope I get to spend the rest of my life finding new reasons to make you smile like that... because your smile is home to me.' 
+            },
+            { 
+                img: 'usf1.jpeg', 
+                reason: 'Your Intelligence', 
+                desc: 'One thing I admire so much kuhusu wewe is how smart you are. You\'re not the type of person who just gets by... when you decide something matters... you lock in kabisa. Watching you take your studies seriously inspires me more than you probably realize. It reminds me that hard work really does pay off. I love that about you... and I\'m incredibly proud of the woman you\'re becoming.' 
+            },
+            { 
+                img: 'us8.jpeg', 
+                reason: 'Your Genuineness', 
+                desc: 'You\'re one of the most genuine people I\'ve ever met. You don\'t pretend to be someone you\'re not... what people see is exactly who you are... and that\'s so rare nowadays. I never have to wonder whether you\'re being real with me because you\'ve always shown me honesty, kindness and care. Thank you for always making me feel safe enough to be myself too.' 
+            },
+            { 
+                img: 'us5.jpeg', 
+                reason: 'Your Laugh', 
+                desc: 'Your laugh has healing powers... and yes, I\'m serious. Sometimes I catch myself saying something extra goofy just because I know it\'ll make you laugh. Hearing you laugh instantly makes my day better. It reminds me that life doesn\'t always have to be serious... and every time I hear it, I find myself thinking... "Yeah... that\'s my girl."' 
+            },
+            { 
+                img: 'usf7.jpeg', 
+                reason: 'Your Voice', 
+                desc: 'Your voice brings me so much peace. Sometimes I don\'t even care what we\'re talking about... I just love hearing you speak. After a long day... hearing your voice feels like finally taking a deep breath. It\'s comforting... it\'s familiar... and it\'s one of the places where my heart feels most at home.' 
+            },
+            { 
+                img: 'us12.jpeg', 
+                reason: 'Your Beauty', 
+                desc: 'Now... can we talk about how absolutely gorgeous you are? Seriously Rehema... every single time I look at you I\'m left wondering... "How is she real?"... Sometimes I stare at your pictures longer than I should because I still can\'t believe you\'re actually my girlfriend. You\'re genuinely the most beautiful girl I\'ve ever laid eyes on... ndani na nje.' 
+            },
+            { 
+                img: 'us6.jpeg', 
+                reason: 'Your Determination', 
+                desc: 'I love how determined you are. Once you\'ve decided you\'re going to do something... hakuna kitu inakusimamisha. Whether it\'s your studies or something important to you... you give it everything you\'ve got. That kind of discipline is something I deeply admire... It motivates me to become better too. You\'re honestly incredible.' 
+            },
+            { 
+                img: 'us4.jpeg', 
+                reason: 'Your Fashion', 
+                desc: 'Okay... this one shouldn\'t even surprise you because I\'ve told you a million times already. Your fashion sense is sooo good. Every single outfit somehow ends up looking amazing on you... I don\'t know how you do it. Every time you send me a picture I\'m already expecting to say... "Babe... umeiva tena."' 
+            },
+            { 
+                img: 'us2.jpeg', 
+                reason: 'You Chose Me', 
+                desc: 'The thing I love most... is that somehow... out of everyone in this world... you chose me. And for that... I will be forever grateful.' 
+            }
         ];
 
         const whyGrid = document.getElementById('whyGrid');
