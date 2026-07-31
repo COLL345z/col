@@ -401,10 +401,13 @@
     <div id="photo-bg"></div>
         <div id="main-content">
         <nav id="tabs-nav">
+            
             <button class="tab-btn active" data-tab="letter">💌 Letter</button>
             <button class="tab-btn" data-tab="why">❤️ Why I Love You</button>
             <button class="tab-btn" data-tab="love">💕 Love</button>
              <button class="tab-btn back-btn" id="backToHero">Back to begin</button>
+            
+            <button class="tab-btn active" id="letter">💌 Letter</button>
         </nav>
         <div id="tab-container">
             <section class="tab-panel active" id="panel-letter">
@@ -756,8 +759,8 @@
         animationId = requestAnimationFrame(draw);
     })();
     // Back to hero - full page reload
-const backBtn = document.getElementById('backToHero');
-backBtn.addEventListener('click', () => {
+const backBtn = document.getElementById('letter');
+tab-btn active.addEventListener('click', () => {
     location.reload();
 });
     </script>
