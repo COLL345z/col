@@ -248,7 +248,14 @@
         .tab-panel.active { display: flex; }
 
         #panel-love { padding: 0 !important; background: #060202; }
-
+         .back-btn {
+    background: rgba(212,175,55,0.2) !important;
+    border-color: var(--accent-gold) !important;
+}
+.back-btn:hover {
+    background: var(--accent-gold) !important;
+    color: #0a0a12 !important;
+}
         .continue-section-btn {
             margin-top: 20px; background: linear-gradient(135deg, var(--accent-crimson), var(--accent-wine));
             color: #fff; border: none; padding: 12px 34px; border-radius: 40px;
@@ -397,6 +404,7 @@
             <button class="tab-btn active" data-tab="letter">💌 Letter</button>
             <button class="tab-btn" data-tab="why">❤️ Why I Love You</button>
             <button class="tab-btn" data-tab="love">💕 Love</button>
+             <button class="tab-btn back-btn" id="backToHero" style="display:none;">Back to begin</button>
         </nav>
         <div id="tab-container">
             <section class="tab-panel active" id="panel-letter">
@@ -747,6 +755,11 @@
         
         animationId = requestAnimationFrame(draw);
     })();
+    // Back to hero - full page reload
+const backBtn = document.getElementById('backToHero');
+backBtn.addEventListener('click', () => {
+    location.reload();
+});
     </script>
 </body>
 </html>
