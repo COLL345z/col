@@ -474,91 +474,7 @@
     <audio id="bgMusic" src="song1.mp3" loop preload="auto"></audio>
     <audio id="bgMusic2" src="song2.mp3" loop preload="auto"></audio>
 
-    <script>
-        (function(){const w=document.getElementById('heroBubbles');[{top:8,left:60,size:11,delay:0},{top:83,left:14,size:20,delay:.15},{top:25,left:49,size:4,delay:.3},{top:63,left:93,size:3,delay:.45},{top:7,left:56,size:18,delay:.6},{top:10,left:68,size:5,delay:.75},{top:68,left:1,size:5,delay:.9},{top:61,left:51,size:11,delay:1.05}].forEach(p=>{const b=document.createElement('div');b.style.cssText='position:absolute;pointer-events:none;z-index:50;';b.style.top=p.top+'%';b.style.left=p.left+'%';b.style.width=p.size+'vmin';b.style.height=p.size+'vmin';b.style.opacity='0';b.style.animation='light-ans '+(6+p.delay)+'s ease-in-out infinite';b.style.animationDelay=p.delay+'s';b.innerHTML='<svg viewBox="0 0 32 32" style="fill:rgba(212,175,55,0.6);width:100%;height:100%;"><path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path></svg>';w.appendChild(b)})})()
-        const hero=document.getElementById('hero'),heroMessage=document.getElementById('heroMessage'),heroEnter=document.getElementById('heroEnter'),mainContent=document.getElementById('main-content'),photoBg=document.getElementById('photo-bg');
-        heroEnter.addEventListener('click',()=>{heroMessage.classList.add('faded');heroEnter.classList.add('faded');setTimeout(()=>{hero.classList.add('slide-up');photoBg.classList.add('visible');mainContent.classList.add('revealed')},300)});
-        const pl=['us10.jpeg','us11.jpeg','us12.jpeg','us2.jpeg','us3.jpeg','us4.jpeg','us5.jpeg','us6.jpeg','us8.jpeg','us9.jpeg','usf1.jpeg','usf7.jpeg'];
-        function sh(a){const s=[...a];for(let i=s.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[s[i],s[j]]=[s[j],s[i]]}return s}
-        const ap=[...sh(pl),...sh(pl),...sh(pl)];
-        for(let i=0;i<21;i++){const img=document.createElement('img');img.className='bg-photo';img.src=ap[i];img.alt='Her photo';img.loading='lazy';img.onerror=function(){this.style.background='linear-gradient(135deg,#2a1a2a,#1a1a2e)';this.style.objectFit='none';this.style.display='flex';this.style.alignItems='center';this.style.justifyContent='center';this.style.fontSize='2rem';this.style.color='rgba(212,175,55,0.3)';this.alt='❤️'};photoBg.appendChild(img)}
-        const tb=document.querySelectorAll('.tab-btn'),tp=document.querySelectorAll('.tab-panel');
-        function at(n){tb.forEach(b=>b.classList.toggle('active',b.dataset.tab===n));tp.forEach(p=>p.classList.toggle('active',p.id==='panel-'+n))}
-        tb.forEach(b=>b.addEventListener('click',()=>at(b.dataset.tab)));
-        const env=document.getElementById('envelope'),ew=document.getElementById('envelopeWrap'),lm=document.getElementById('letter-modal'),lp=document.getElementById('letterPaper');
-        let asi=null,asp=false;
-        function oe(){if(env.classList.contains('open'))return;env.classList.add('open');setTimeout(()=>{lm.style.display='flex';setTimeout(()=>sas(),1000)},750)}
-        ew.addEventListener('click',oe);ew.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();oe()}});
-        function sas(){if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;if(asi)clearInterval(asi);let sa=0;const ms=lp.scrollHeight-lp.clientHeight;if(ms<=0)return;asi=setInterval(()=>{if(asp)return;sa+=1;if(sa>=ms){clearInterval(asi);asi=null;return}lp.scrollTop=sa},50)}
-        lp.addEventListener('scroll',()=>{if(asi){asp=true;clearTimeout(lp._st);lp._st=setTimeout(()=>{asp=false},3000)}});
-        function clm(){lm.style.display='none';if(asi){clearInterval(asi);asi=null}lp.scrollTop=0;asp=false}
-        document.getElementById('closeLetter').addEventListener('click',clm);lm.addEventListener('click',e=>{if(e.target===lm)clm()});document.getElementById('continueBtn').addEventListener('click',clm);
-        // Why I Love You - PRELOAD IMAGES with FULL descriptions
-const wd=[
-    {img:'why1.jpg',reason:'Your Smile 😊',desc:'Your smile has to be one of my favorite things in this world 🥹❤️ it\'s so genuine... so full of life... Every time you smile I can\'t help but smile too 😅Looking at that picture of us, I don\'t even know what was making you laugh that much😂 I honestly hope I get to spend the rest of my life finding new reasons to make you smile like that... your smile is beautiful 🤗'},
-    {img:'why2.jpg',reason:'Your Intelligence 🧠',desc:'i know you hate being called chepe 😂 but i admire how smart you are 🤓✨... You\'re not the type of person who just gets by, when you decide something matters... you lock in kabisa 💯🔥Watching you take your studies seriously inspires me more than you probably realize... I love that about you and I\'m incredibly proud of the woman you are ❤️'},
-    {img:'why3.jpg',reason:'Your Genuineness 💯',desc:'You\'re one of the most genuine people I\'ve ever met 🥹You don\'t pretend to be someone you\'re not... what people see is exactly who you are and that\'s so rare nowadays.I never have to wonder whether you\'re being real with me because you\'ve always shown me honesty, kindness and care ❤️ 🫂'},
-    {img:'why4.jpg',reason:'Your Laugh 😂',desc:'Your laugh has healing powers..im being deadass 😌😌...i might teach myself comedy so can be making you laugh everyday 😂😂Hearing you laugh instantly makes my day better, reminds me that life doesn\'t always have to be serious every time I hear it 🥹💖'},
-    {img:'why5.jpg',reason:'Your Voice 🎤',desc:'Your voice brings me so much peace 😌❤️... sometimes I don\'t even care what we\'re talking about, I just love hearing you speak.in the bad/long/stressfull days hearing your voice feels like finally taking a deep breath, It\'s comforting and it\'s familiar…and it\'s one of the things I love most about you 💖'},
-    {img:'why6.jpg',reason:'Your Beauty 🥹🌹',desc:'Damnnnnn... can we just talk about how absolutely gorgeous you are? 🥹❤️ seriously Rehema…UMEIVAAA💯🌹💯sometimes I catch myself staring at your pictures for way longer than I should because I still can\'t believe you\'re actually my girlfriend😭💖 looking at this pic,seeing you standing there in your natural hair, with that huge beautiful smile made me smile without even realizing it😊😃Your beauty isn\'t just in your face…it\'s in your smile, your laugh, your heart, and the way you make my world feel brighter every single day🤗❤️🌹'},
-    {img:'why7.jpg',reason:'Your Fashion 👗🔥',desc:'Your fashion sense is sooo good 🤩✨... Every single outfit somehow ends up looking amazing on you... I don\'t know how you do it 😂Whether it\'s something simple or something you\'ve clearly planned..you always make it work... You have this ability to make clothes look even better just because you\'re wearing them 💖... Every time you send me a picture I\'m already expecting to say "Ghaiiii ghaiiii ghaiiii Babeee...you look fire 🔥" every time you dress up, you somehow outdo yourself again 🔥🤪'},
-    {img:'why8.jpg',reason:'You Chose Me 🥹❤️',desc:'The thing I love most, is that somehow out of everyone in this world... you chose me. Thank you Babe 🥹❤️'}
-];
-
-// Preload all why images in background
-wd.forEach(item => {
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = 'image';
-    link.href = item.img;
-    document.head.appendChild(link);
-    // Also preload with Image objects
-    const img = new Image();
-    img.src = item.img;
-});
-
-const wg=document.getElementById('whyGrid');
-wd.forEach(i=>{
-    const c=document.createElement('div');
-    c.className='why-card';
-    c.innerHTML=`<div class="img-frame"><img src="${i.img}" alt="${i.reason}" loading="eager" onerror="this.parentElement.innerHTML='📸'"></div><div class="reason">${i.reason}</div><div class="reason-desc">${i.desc}</div>`;
-    wg.appendChild(c);
-});
-        // Music - AUTOPLAY FIX
-const bm=document.getElementById('bgMusic'),bm2=document.getElementById('bgMusic2'),mpp=document.getElementById('musicPlayPause'),mb=document.getElementById('music-bubble'),mc=document.getElementById('music-controller'),ps=document.getElementById('prevSong'),ns=document.getElementById('nextSong');
-let cs=1,msd=false;
-function gca(){return cs===1?bm:bm2}
-function poa(){if(cs===1)bm2.pause();else bm.pause()}
-function pcs(){
-    const a=gca();
-    poa();
-    a.volume=0.25;
-    // Try to play immediately
-    const playPromise = a.play();
-    if (playPromise !== undefined) {
-        playPromise.then(()=>{
-            mpp.textContent='❚❚';
-            msd=true;
-        }).catch(()=>{
-            mpp.textContent='▶';
-            // If autoplay blocked, show bubble as hint
-            mb.classList.add('show');
-        });
-    }
-}
-function ss(sn){cs=sn;pcs()}
-
-// Try autoplay immediately on page load
-window.addEventListener('load', ()=>{
-    setTimeout(()=>{
-        if(!msd) pcs();
-    }, 200);
-});
-
-// Also try on first user interaction
-heroEnter.addEventListener('click',()=>{if(!msd)setTimeout(()=>pcs(),300)});
-document.addEventListener('click',function fcm(){
-    if(!msd)setTimeout(()=>pcs(),200);
+        if(!msd)setTimeout(()=>pcs(),200);
 },{once:true});
 document.addEventListener('touchstart',function fcm2(){
     if(!msd)setTimeout(()=>pcs(),200);
@@ -730,58 +646,282 @@ mc.addEventListener('click',rht);
         ctx.fillStyle = grad;
         ctx.beginPath();
         ctx.arc(cx, cy, glowR, 0, Math.PI * 2);
-        ctx.fill();
-        
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        
-        for (const l of heartLabels) {
-            const flick = 0.55 + 0.45 * Math.sin(t * l.flickerSpeed + l.flickerPhase);
-            const px = cx + l.x * scale;
-            const py = cy + l.y * scale;
-            const fontSize = scale * 0.62 * l.size;
-            const alpha = l.alpha * flick;
-            const brightness = Math.floor(90 + flick * 130);
-            
-            ctx.save();
-            ctx.translate(px, py);
-            ctx.rotate(l.rot);
-            ctx.font = `${fontSize}px 'Segoe UI', sans-serif`;
-            ctx.shadowColor = `rgba(255,${Math.floor(40+flick*60)},${Math.floor(40+flick*40)},0.9)`;
-            ctx.shadowBlur = 6 + flick * 8;
-            ctx.fillStyle = `rgba(255,${brightness*0.35},${brightness*0.25},${alpha})`;
-            ctx.fillText(WORD, 0, 0);
-            ctx.restore();
+<script>
+    // Hero floating hearts
+    (function(){const w=document.getElementById('heroBubbles');[{top:8,left:60,size:11,delay:0},{top:83,left:14,size:20,delay:.15},{top:25,left:49,size:4,delay:.3},{top:63,left:93,size:3,delay:.45},{top:7,left:56,size:18,delay:.6},{top:10,left:68,size:5,delay:.75},{top:68,left:1,size:5,delay:.9},{top:61,left:51,size:11,delay:1.05}].forEach(p=>{const b=document.createElement('div');b.style.cssText='position:absolute;pointer-events:none;z-index:50;';b.style.top=p.top+'%';b.style.left=p.left+'%';b.style.width=p.size+'vmin';b.style.height=p.size+'vmin';b.style.opacity='0';b.style.animation='light-ans '+(6+p.delay)+'s ease-in-out infinite';b.style.animationDelay=p.delay+'s';b.innerHTML='<svg viewBox="0 0 32 32" style="fill:rgba(212,175,55,0.6);width:100%;height:100%;"><path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path></svg>';w.appendChild(b)})})()
+
+    const hero=document.getElementById('hero'),heroMessage=document.getElementById('heroMessage'),heroEnter=document.getElementById('heroEnter'),mainContent=document.getElementById('main-content'),photoBg=document.getElementById('photo-bg');
+    heroEnter.addEventListener('click',()=>{heroMessage.classList.add('faded');heroEnter.classList.add('faded');setTimeout(()=>{hero.classList.add('slide-up');photoBg.classList.add('visible');mainContent.classList.add('revealed')},300)});
+
+    // Photo bg
+    const pl=['us10.jpeg','us11.jpeg','us12.jpeg','us2.jpeg','us3.jpeg','us4.jpeg','us5.jpeg','us6.jpeg','us8.jpeg','us9.jpeg','usf1.jpeg','usf7.jpeg'];
+    function sh(a){const s=[...a];for(let i=s.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[s[i],s[j]]=[s[j],s[i]]}return s}
+    const ap=[...sh(pl),...sh(pl),...sh(pl)];
+    for(let i=0;i<21;i++){const img=document.createElement('img');img.className='bg-photo';img.src=ap[i];img.alt='Her photo';img.loading='lazy';img.onerror=function(){this.style.background='linear-gradient(135deg,#2a1a2a,#1a1a2e)';this.style.objectFit='none';this.style.display='flex';this.style.alignItems='center';this.style.justifyContent='center';this.style.fontSize='2rem';this.style.color='rgba(212,175,55,0.3)';this.alt='❤️'};photoBg.appendChild(img)}
+
+    // Tabs
+    const tb=document.querySelectorAll('.tab-btn'),tp=document.querySelectorAll('.tab-panel');
+    function at(n){tb.forEach(b=>b.classList.toggle('active',b.dataset.tab===n));tp.forEach(p=>p.classList.toggle('active',p.id==='panel-'+n))}
+    tb.forEach(b=>b.addEventListener('click',()=>at(b.dataset.tab)));
+
+    // Envelope
+    const env=document.getElementById('envelope'),ew=document.getElementById('envelopeWrap'),lm=document.getElementById('letter-modal'),lp=document.getElementById('letterPaper');
+    let asi=null,asp=false;
+    function oe(){if(env.classList.contains('open'))return;env.classList.add('open');setTimeout(()=>{lm.style.display='flex';setTimeout(()=>sas(),1000)},750)}
+    ew.addEventListener('click',oe);ew.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();oe()}});
+    function sas(){if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;if(asi)clearInterval(asi);let sa=0;const ms=lp.scrollHeight-lp.clientHeight;if(ms<=0)return;asi=setInterval(()=>{if(asp)return;sa+=1;if(sa>=ms){clearInterval(asi);asi=null;return}lp.scrollTop=sa},50)}
+    lp.addEventListener('scroll',()=>{if(asi){asp=true;clearTimeout(lp._st);lp._st=setTimeout(()=>{asp=false},3000)}});
+    function clm(){lm.style.display='none';if(asi){clearInterval(asi);asi=null}lp.scrollTop=0;asp=false}
+    document.getElementById('closeLetter').addEventListener('click',clm);lm.addEventListener('click',e=>{if(e.target===lm)clm()});document.getElementById('continueBtn').addEventListener('click',clm);
+
+    // Why I Love You - PRELOAD IMAGES with FULL descriptions
+    const wd=[
+        {img:'why1.jpg',reason:'Your Smile 😊',desc:'Your smile has to be one of my favorite things in this world 🥹❤️ it\'s so genuine... so full of life... Every time you smile I can\'t help but smile too 😅Looking at that picture of us, I don\'t even know what was making you laugh that much😂 I honestly hope I get to spend the rest of my life finding new reasons to make you smile like that... your smile is beautiful 🤗'},
+        {img:'why2.jpg',reason:'Your Intelligence 🧠',desc:'i know you hate being called chepe 😂 but i admire how smart you are 🤓✨... You\'re not the type of person who just gets by, when you decide something matters... you lock in kabisa 💯🔥Watching you take your studies seriously inspires me more than you probably realize... I love that about you and I\'m incredibly proud of the woman you are ❤️'},
+        {img:'why3.jpg',reason:'Your Genuineness 💯',desc:'You\'re one of the most genuine people I\'ve ever met 🥹You don\'t pretend to be someone you\'re not... what people see is exactly who you are and that\'s so rare nowadays.I never have to wonder whether you\'re being real with me because you\'ve always shown me honesty, kindness and care ❤️ 🫂'},
+        {img:'why4.jpg',reason:'Your Laugh 😂',desc:'Your laugh has healing powers..im being deadass 😌😌...i might teach myself comedy so can be making you laugh everyday 😂😂Hearing you laugh instantly makes my day better, reminds me that life doesn\'t always have to be serious every time I hear it 🥹💖'},
+        {img:'why5.jpg',reason:'Your Voice 🎤',desc:'Your voice brings me so much peace 😌❤️... sometimes I don\'t even care what we\'re talking about, I just love hearing you speak.in the bad/long/stressfull days hearing your voice feels like finally taking a deep breath, It\'s comforting and it\'s familiar…and it\'s one of the things I love most about you 💖'},
+        {img:'why6.jpg',reason:'Your Beauty 🥹🌹',desc:'Damnnnnn... can we just talk about how absolutely gorgeous you are? 🥹❤️ seriously Rehema…UMEIVAAA💯🌹💯sometimes I catch myself staring at your pictures for way longer than I should because I still can\'t believe you\'re actually my girlfriend😭💖 looking at this pic,seeing you standing there in your natural hair, with that huge beautiful smile made me smile without even realizing it😊😃Your beauty isn\'t just in your face…it\'s in your smile, your laugh, your heart, and the way you make my world feel brighter every single day🤗❤️🌹'},
+        {img:'why7.jpg',reason:'Your Fashion 👗🔥',desc:'Your fashion sense is sooo good 🤩✨... Every single outfit somehow ends up looking amazing on you... I don\'t know how you do it 😂Whether it\'s something simple or something you\'ve clearly planned..you always make it work... You have this ability to make clothes look even better just because you\'re wearing them 💖... Every time you send me a picture I\'m already expecting to say "Ghaiiii ghaiiii ghaiiii Babeee...you look fire 🔥" every time you dress up, you somehow outdo yourself again 🔥🤪'},
+        {img:'why8.jpg',reason:'You Chose Me 🥹❤️',desc:'The thing I love most, is that somehow out of everyone in this world... you chose me. Thank you Babe 🥹❤️'}
+    ];
+
+    // Preload all why images in background
+    wd.forEach(item => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = item.img;
+        document.head.appendChild(link);
+        const img = new Image();
+        img.src = item.img;
+    });
+
+    const wg=document.getElementById('whyGrid');
+    wd.forEach(i=>{const c=document.createElement('div');c.className='why-card';c.innerHTML=`<div class="img-frame"><img src="${i.img}" alt="${i.reason}" loading="eager" onerror="this.parentElement.innerHTML='📸'"></div><div class="reason">${i.reason}</div><div class="reason-desc">${i.desc}</div>`;wg.appendChild(c)});
+
+    // Music - AUTOPLAY FIX with 20% volume
+    const bm=document.getElementById('bgMusic'),bm2=document.getElementById('bgMusic2'),mpp=document.getElementById('musicPlayPause'),mb=document.getElementById('music-bubble'),mc=document.getElementById('music-controller'),ps=document.getElementById('prevSong'),ns=document.getElementById('nextSong');
+    let cs=1,msd=false;
+    function gca(){return cs===1?bm:bm2}
+    function poa(){if(cs===1)bm2.pause();else bm.pause()}
+    function pcs(){
+        const a=gca();
+        poa();
+        a.volume=0.20;
+        const playPromise = a.play();
+        if (playPromise !== undefined) {
+            playPromise.then(()=>{
+                mpp.textContent='❚❚';
+                msd=true;
+            }).catch(()=>{
+                mpp.textContent='▶';
+                mb.classList.add('show');
+            });
         }
+    }
+    function ss(sn){cs=sn;pcs()}
+
+    // Try autoplay immediately on page load
+    window.addEventListener('load', ()=>{
+        setTimeout(()=>{
+            if(!msd) pcs();
+        }, 200);
+    });
+
+    // Also try on first user interaction
+    heroEnter.addEventListener('click',()=>{if(!msd)setTimeout(()=>pcs(),300)});
+    document.addEventListener('click',function fcm(){if(!msd)setTimeout(()=>pcs(),200);},{once:true});
+    document.addEventListener('touchstart',function fcm2(){if(!msd)setTimeout(()=>pcs(),200);},{once:true});
+
+    mpp.addEventListener('click',()=>{const a=gca();if(a.paused)pcs();else{a.pause();mpp.textContent='▶';}});
+    ps.addEventListener('click',()=>ss(cs===1?2:1));ns.addEventListener('click',()=>ss(cs===1?2:1));
+    bm.addEventListener('ended',()=>{if(cs===1){bm.currentTime=0;bm.play()}});
+    bm2.addEventListener('ended',()=>{if(cs===2){bm2.currentTime=0;bm2.play()}});
+    mb.addEventListener('click',()=>{mc.classList.add('visible');mc.classList.remove('hidden');mb.classList.remove('show');if(!msd)pcs();});
+    let ht;function rht(){clearTimeout(ht);mc.classList.add('visible');mc.classList.remove('hidden');mb.classList.remove('show');ht=setTimeout(()=>{mc.classList.add('hidden');mc.classList.remove('visible');mb.classList.add('show')},3000)}
+    mc.addEventListener('mouseenter',rht);mc.addEventListener('click',rht);
+
+    document.getElementById('letterContinue').addEventListener('click',()=>at('why'));
+    document.getElementById('whyContinue').addEventListener('click',()=>at('love'));
+
+    // Heart animation - INSTANT LOAD FIX
+    (function(){
+        const container = document.getElementById('panel-love');
+        if (!container) return;
         
-        for (const chain of chains) {
-            for (const bead of chain.beads) {
-                const tt = chain.phaseOffset + chain.dir * (t * chain.speed) + bead.tOffset;
-                const pt = heartOutline(tt % (Math.PI * 2));
-                const px = cx + pt.x * scale * chain.expand;
-                const py = cy + pt.y * scale * chain.expand;
-                const flick = 0.6 + 0.4 * Math.sin(t * 2 + bead.tOffset * 10);
-                const fontSize = scale * 0.5 * bead.size;
-                const alpha = bead.alphaBase * flick;
-                
-                ctx.save();
-                ctx.translate(px, py);
-                ctx.font = `${fontSize}px 'Segoe UI', sans-serif`;
-                ctx.shadowColor = 'rgba(255,90,90,0.9)';
-                ctx.shadowBlur = 8;
-                ctx.fillStyle = `rgba(255,${Math.floor(120+flick*90)},${Math.floor(110+flick*60)},${alpha})`;
-                ctx.fillText(WORD, 0, 0);
-                ctx.restore();
+        const canvas = document.createElement('canvas');
+        canvas.style.cssText = 'position:absolute;top:0;left:0;display:block;pointer-events:none;';
+        container.appendChild(canvas);
+        const ctx = canvas.getContext('2d');
+        const WORD = "i love you";
+        let W, H, DPR;
+        let initialized = false;
+        
+        function resize() {
+            DPR = Math.min(window.devicePixelRatio || 1, 2);
+            W = container.clientWidth;
+            H = container.clientHeight;
+            if (W === 0 || H === 0) return;
+            canvas.width = W * DPR;
+            canvas.height = H * DPR;
+            canvas.style.width = W + 'px';
+            canvas.style.height = H + 'px';
+            ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+            if (!initialized) {
+                buildHeartLabels();
+                buildChains();
+                initialized = true;
             }
         }
         
+        function insideHeart(x, y) {
+            const X = x / 12, Y = -y / 12 + 0.4;
+            return Math.pow(X * X + Y * Y - 1, 3) - X * X * Y * Y * Y <= 0;
+        }
+        
+        function heartOutline(t) {
+            return {
+                x: 16 * Math.pow(Math.sin(t), 3),
+                y: -(13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t))
+            };
+        }
+        
+        let heartLabels = [];
+        function buildHeartLabels() {
+            heartLabels = [];
+            const cols = 28, rows = 28;
+            for (let i = 0; i < cols; i++) {
+                for (let j = 0; j < rows; j++) {
+                    const x = -18 + (36 * i / cols) + (Math.random() - 0.5) * 1.1;
+                    const y = -18 + (33 * j / rows) + (Math.random() - 0.5) * 1.1;
+                    if (insideHeart(x, y) && Math.random() < 0.85) {
+                        heartLabels.push({
+                            x, y,
+                            size: Math.random() * 0.55 + 0.55,
+                            alpha: Math.random() * 0.5 + 0.35,
+                            flickerSpeed: Math.random() * 1.5 + 0.4,
+                            flickerPhase: Math.random() * Math.PI * 2,
+                            rot: (Math.random() - 0.5) * 0.2
+                        });
+                    }
+                }
+            }
+        }
+        
+        let chains = [];
+        function buildChains() {
+            chains = [];
+            const numChains = 5;
+            for (let c = 0; c < numChains; c++) {
+                const beadsInChain = 9;
+                const expand = 1.25 + c * 0.22;
+                const speed = 0.09 + c * 0.015;
+                const dir = c % 2 === 0 ? 1 : -1;
+                const phaseOffset = (c / numChains) * Math.PI * 2;
+                const beads = [];
+                for (let b = 0; b < beadsInChain; b++) {
+                    beads.push({
+                        tOffset: (b / beadsInChain) * Math.PI * 2 * 0.28,
+                        size: Math.random() * 0.35 + 0.55,
+                        alphaBase: 0.35 + (b / beadsInChain) * 0.5
+                    });
+                }
+                chains.push({ expand, speed, dir, phaseOffset, beads });
+            }
+        }
+        
+        resize();
+        window.addEventListener('resize', resize);
+        
+        const mo = new MutationObserver(() => {
+            if (container.classList.contains('active')) {
+                resize();
+            }
+        });
+        mo.observe(container, { attributes: true, attributeFilter: ['class'] });
+        
+        let startTime = performance.now();
+        let animationId = null;
+        
+        function draw(now) {
+            if (!container.classList.contains('active')) {
+                animationId = requestAnimationFrame(draw);
+                return;
+            }
+            if (W === 0 || H === 0) {
+                resize();
+                animationId = requestAnimationFrame(draw);
+                return;
+            }
+            
+            const t = (now - startTime) / 1000;
+            ctx.clearRect(0, 0, W, H);
+            ctx.fillStyle = '#060202';
+            ctx.fillRect(0, 0, W, H);
+            
+            const cx = W / 2, cy = H / 2;
+            const scale = Math.min(W, H) * 0.038;
+            
+            const glowR = Math.min(W, H) * 0.55;
+            const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, glowR);
+            grad.addColorStop(0, 'rgba(255,30,30,0.16)');
+            grad.addColorStop(1, 'rgba(255,30,30,0)');
+            ctx.fillStyle = grad;
+            ctx.beginPath();
+            ctx.arc(cx, cy, glowR, 0, Math.PI * 2);
+            ctx.fill();
+            
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            for (const l of heartLabels) {
+                const flick = 0.55 + 0.45 * Math.sin(t * l.flickerSpeed + l.flickerPhase);
+                const px = cx + l.x * scale;
+                const py = cy + l.y * scale;
+                const fontSize = scale * 0.62 * l.size;
+                const alpha = l.alpha * flick;
+                const brightness = Math.floor(90 + flick * 130);
+                
+                ctx.save();
+                ctx.translate(px, py);
+                ctx.rotate(l.rot);
+                ctx.font = `${fontSize}px 'Segoe UI', sans-serif`;
+                ctx.shadowColor = `rgba(255,${Math.floor(40+flick*60)},${Math.floor(40+flick*40)},0.9)`;
+                ctx.shadowBlur = 6 + flick * 8;
+                ctx.fillStyle = `rgba(255,${brightness*0.35},${brightness*0.25},${alpha})`;
+                ctx.fillText(WORD, 0, 0);
+                ctx.restore();
+            }
+            
+            for (const chain of chains) {
+                for (const bead of chain.beads) {
+                    const tt = chain.phaseOffset + chain.dir * (t * chain.speed) + bead.tOffset;
+                    const pt = heartOutline(tt % (Math.PI * 2));
+                    const px = cx + pt.x * scale * chain.expand;
+                    const py = cy + pt.y * scale * chain.expand;
+                    const flick = 0.6 + 0.4 * Math.sin(t * 2 + bead.tOffset * 10);
+                    const fontSize = scale * 0.5 * bead.size;
+                    const alpha = bead.alphaBase * flick;
+                    
+                    ctx.save();
+                    ctx.translate(px, py);
+                    ctx.font = `${fontSize}px 'Segoe UI', sans-serif`;
+                    ctx.shadowColor = 'rgba(255,90,90,0.9)';
+                    ctx.shadowBlur = 8;
+                    ctx.fillStyle = `rgba(255,${Math.floor(120+flick*90)},${Math.floor(110+flick*60)},${alpha})`;
+                    ctx.fillText(WORD, 0, 0);
+                    ctx.restore();
+                }
+            }
+            
+            animationId = requestAnimationFrame(draw);
+        }
+        
         animationId = requestAnimationFrame(draw);
-    }
-    
-    animationId = requestAnimationFrame(draw);
-    
-})();
-    </script>
+    })();
+</script>
+                                                                                            </script>
             
 </body>
 </html>
