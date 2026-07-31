@@ -473,6 +473,7 @@
 
     <audio id="bgMusic" src="song1.mp3" loop preload="auto"></audio>
     <audio id="bgMusic2" src="song2.mp3" loop preload="auto"></audio>
+    <audio id="bgMusic2" src="song3.mp3" loop preload="auto"></audio>
 
     
 <script>
@@ -497,7 +498,7 @@
     const env=document.getElementById('envelope'),ew=document.getElementById('envelopeWrap'),lm=document.getElementById('letter-modal'),lp=document.getElementById('letterPaper');
     function oe(){if(env.classList.contains('open'))return;env.classList.add('open');setTimeout(()=>{lm.style.display='flex'},750)}
     ew.addEventListener('click',oe);ew.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();oe()}});
-   function clm(){lm.style.display='none';lp.scrollTop=0}
+   function clm(){lm.style.display='none';lp.scrollTop=0;env.classList.remove('open')}
     document.getElementById('closeLetter').addEventListener('click',clm);lm.addEventListener('click',e=>{if(e.target===lm)clm()});document.getElementById('continueBtn').addEventListener('click',clm);
 
     // Why I Love You - PRELOAD IMAGES with FULL descriptions
