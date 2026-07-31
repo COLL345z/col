@@ -495,17 +495,14 @@
 
     // Envelope
     const env=document.getElementById('envelope'),ew=document.getElementById('envelopeWrap'),lm=document.getElementById('letter-modal'),lp=document.getElementById('letterPaper');
-    let asi=null,asp=false;
-    function oe(){if(env.classList.contains('open'))return;env.classList.add('open');setTimeout(()=>{lm.style.display='flex';setTimeout(()=>sas(),1000)},750)}
+    function oe(){if(env.classList.contains('open'))return;env.classList.add('open');setTimeout(()=>{lm.style.display='flex'},750)}
     ew.addEventListener('click',oe);ew.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();oe()}});
-    function sas(){if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;if(asi)clearInterval(asi);let sa=0;const ms=lp.scrollHeight-lp.clientHeight;if(ms<=0)return;asi=setInterval(()=>{if(asp)return;sa+=1;if(sa>=ms){clearInterval(asi);asi=null;return}lp.scrollTop=sa},50)}
-    lp.addEventListener('scroll',()=>{if(asi){asp=true;clearTimeout(lp._st);lp._st=setTimeout(()=>{asp=false},3000)}});
-    function clm(){lm.style.display='none';if(asi){clearInterval(asi);asi=null}lp.scrollTop=0;asp=false}
+   function clm(){lm.style.display='none';lp.scrollTop=0}
     document.getElementById('closeLetter').addEventListener('click',clm);lm.addEventListener('click',e=>{if(e.target===lm)clm()});document.getElementById('continueBtn').addEventListener('click',clm);
 
     // Why I Love You - PRELOAD IMAGES with FULL descriptions
     const wd=[
-        {img:'why1.jpg',reason:'Your Smile 😊',desc:'Your smile has to be one of my favorite things in this world 🥹❤️ it\'s so genuine... so full of life... Every time you smile I can\'t help but smile too 😅Looking at that picture of us, I don\'t even know what was making you laugh that much😂 I honestly hope I get to spend the rest of my life finding new reasons to make you smile like that... your smile is beautiful 🤗'},
+        {img:'why1.jpg',reason:'Your Smile 😊',desc:'Your smile has to be one of my favorite things in this world 🥹❤️ it\'s so genuine... so full of life... Every time you smile I can\'t help but smile too 😅I don\'t even know what was making you smile that much😂 I honestly hope I get to spend the rest of my life finding new reasons to make you smile like that... your smile is beautiful 🤗'},
         {img:'why2.jpg',reason:'Your Intelligence 🧠',desc:'i know you hate being called chepe 😂 but i admire how smart you are 🤓✨... You\'re not the type of person who just gets by, when you decide something matters... you lock in kabisa 💯🔥Watching you take your studies seriously inspires me more than you probably realize... I love that about you and I\'m incredibly proud of the woman you are ❤️'},
         {img:'why3.jpg',reason:'Your Genuineness 💯',desc:'You\'re one of the most genuine people I\'ve ever met 🥹You don\'t pretend to be someone you\'re not... what people see is exactly who you are and that\'s so rare nowadays.I never have to wonder whether you\'re being real with me because you\'ve always shown me honesty, kindness and care ❤️ 🫂'},
         {img:'why4.jpg',reason:'Your Laugh 😂',desc:'Your laugh has healing powers..im being deadass 😌😌...i might teach myself comedy so can be making you laugh everyday 😂😂Hearing you laugh instantly makes my day better, reminds me that life doesn\'t always have to be serious every time I hear it 🥹💖'},
